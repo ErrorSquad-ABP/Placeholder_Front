@@ -36,7 +36,7 @@ async function carregarDados() {
         showAlert('Erro ao carregar dados. Por favor, verifique sua conexão e tente novamente.', 'error');
         // Redirecionar para login se o token estiver inválido
         if (error.message.includes('Token inválido') || error.message.includes('não autorizado')) {
-            window.location.href = '../login.html';
+            window.location.href = '/login';
         }
     }
 }

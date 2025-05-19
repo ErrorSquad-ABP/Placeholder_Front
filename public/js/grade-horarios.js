@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const token = localStorage.getItem('token');
         if (!token) {
             console.log('Token não encontrado, redirecionando para login...');
-            window.location.href = '/public/login.html';
+            window.location.href = '/login';
             return;
         }
 
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (agora >= expiracao - 1000) {
                 console.log('Token expirado, redirecionando para login...');
                 localStorage.clear(); // Limpa todo o localStorage
-                window.location.href = '/public/login.html';
+                window.location.href = '/login';
             }
         } catch (error) {
             console.error('Erro ao verificar token:', error);
             localStorage.clear(); // Limpa todo o localStorage em caso de erro
-            window.location.href = '/public/login.html';
+            window.location.href = '/login';
         }
     }
 
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const token = localStorage.getItem('token');
         const id = localStorage.getItem('userId');
         if (!token) {
-            window.location.href = '/public/login.html';
+            window.location.href = '/login';
             return;
         }
         try {
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 if (response.status === 401) {
                     localStorage.removeItem('token');
-                    window.location.href = '/public/login.html';
+                    window.location.href = '/login';
                     return;
                 }
                 throw new Error(`Erro ao buscar ambientes: ${response.status}`);

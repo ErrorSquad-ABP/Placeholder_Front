@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.removeItem('id');
             
             // Redirecionar para a página de login
-            window.location.href = '/public/login.html';
+            window.location.href = '/login';
         });
     }
     
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.sidebar-item a[data-protected-link]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+           
             // Remove a classe active de todos os links
             document.querySelectorAll('.sidebar-item a').forEach(item => item.classList.remove('active'));
             

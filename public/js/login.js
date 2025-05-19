@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Verificar se já está autenticado
     if (localStorage.getItem('token')) {
-        window.location.href = '/public/adm/home.html';
+        window.location.href = '/home';
         return;
     }
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             await login(email, senha);
             // Após login bem-sucedido
-            window.location.href = '/public/adm/home.html';
+            window.location.href = '/home';
         } catch (error) {
             console.error('Erro no login:', error);
             if (error.message === 'Email ou senha inválidos') {

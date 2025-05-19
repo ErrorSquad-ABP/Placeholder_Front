@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 case 'Sair':
                     showToast('Saindo do sistema...', 'info');
                     setTimeout(() => {
-                        window.location.href = 'login.html';
+                        window.location.href = '/login';
                     }, 1000);
                     break;
             }
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (!isAdmin) {
             // Redirecionar para página inicial se não for admin
-            window.location.href = 'home.html';
+            window.location.href = '/home';
         }
     }
     
